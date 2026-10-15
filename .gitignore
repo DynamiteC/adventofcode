@@ -1,5 +1,14 @@
 .env
 node_modules/
-# AoC asks not to publish puzzle inputs
-input*.txt
+
+# AoC asks not to publish puzzle inputs or prose.
+# example.txt IS tracked (sample test cases) so `make test` works anywhere.
 inputs/
+days/**/input.txt
+days/**/puzzle.md
+
+# TypeScript / tooling
+dist/
+*.tsbuildinfo
+.vitest/
+coverage/
