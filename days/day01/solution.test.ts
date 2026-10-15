@@ -9,15 +9,16 @@ const example = readFileSync(
 );
 
 /**
- * The example test is the red-green gate. Fill in the expected sample
- * outputs from puzzle.md, then make them pass before running real input.
+ * The example test is the red-green gate. The dial lands on 0 three times at
+ * the end of a rotation (Part 1 = 3), plus three more times mid-rotation, so
+ * Part 2 = 6.
  */
-describe("day 01", () => {
+describe("day 01: Secret Entrance", () => {
   it("part1 matches the sample", () => {
-    expect(part1(example)).toBe(-3);
+    expect(part1(example)).toBe(3);
   });
 
   it("part2 matches the sample", () => {
-    expect(part2(example)).toBe(1);
+    expect(part2(example)).toBe(6);
   });
 });

@@ -38,10 +38,15 @@ type Solver = (input: string) => unknown;
 
 function run(label: string, fn: Solver, input: string): void {
   const start = performance.now();
-  const result = fn(input);
-  const elapsed = performance.now() - start;
-  console.log(`${label}: ${result}`);
-  console.log(`  time: ${formatMicros(elapsed)}`);
+  try {
+    const result = fn(input);
+    const elapsed = performance.now() - start;
+    console.log(`${label}: ${result}`);
+    console.log(`  time: ${formatMicros(elapsed)}`);
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.log(`${label}: skipped (${message})`);
+  }
 }
 
 const day = normalizeDay(process.argv[2]);
