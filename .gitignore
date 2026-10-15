@@ -1,0 +1,5 @@
+.env
+node_modules/
+# AoC asks not to publish puzzle inputs
+input*.txt
+inputs/
